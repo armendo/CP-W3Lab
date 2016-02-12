@@ -123,14 +123,65 @@
                             <constraint firstItem="YYo-bw-nHl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="iDM-cb-3ba"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
+                    <navigationItem key="navigationItem" id="x5q-EH-pP8">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="bcH-aJ-N7f">
+                            <connections>
+                                <action selector="settingsPressed:" destination="vXZ-lx-hvc" id="aBm-S5-R0Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YYo-bw-nHl" id="cxt-9J-yOp"/>
+                        <segue destination="tqI-PM-fG2" kind="push" identifier="settingsSegue" id="3Vg-fn-iik"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472" y="-528"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="cQJ-4v-4Mj">
+            <objects>
+                <viewController id="tqI-PM-fG2" customClass="SettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PgX-lK-MWa"/>
+                        <viewControllerLayoutGuide type="bottom" id="jbh-C6-v0G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3sK-cp-Mag">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-fV-vdd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="383"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="bxg-zv-6rM">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxg-zv-6rM" id="AwI-xq-R4a">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jbh-C6-v0G" firstAttribute="top" secondItem="lGn-fV-vdd" secondAttribute="bottom" constant="185" id="T4O-5M-c9b"/>
+                            <constraint firstAttribute="trailing" secondItem="lGn-fV-vdd" secondAttribute="trailing" id="Wqx-m2-Ptv"/>
+                            <constraint firstItem="lGn-fV-vdd" firstAttribute="top" secondItem="3sK-cp-Mag" secondAttribute="top" id="q4W-sS-EmB"/>
+                            <constraint firstItem="lGn-fV-vdd" firstAttribute="leading" secondItem="3sK-cp-Mag" secondAttribute="leading" id="rIg-dK-rd6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="baP-Z9-0C0"/>
+                    <connections>
+                        <outlet property="tableView" destination="lGn-fV-vdd" id="aFz-RL-ukj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkq-yc-7Mr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="-528"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">

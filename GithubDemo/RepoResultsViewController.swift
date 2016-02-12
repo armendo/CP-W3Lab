@@ -52,9 +52,9 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource {
         GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
 
             // Print the returned repositories to the output window
-            for repo in newRepos {
-                print(repo)
-            }
+//            for repo in newRepos {
+//                print(repo)
+//            }
             self.repos = newRepos
             self.tableView.reloadData()
             MBProgressHUD.hideHUDForView(self.view, animated: true)
@@ -121,4 +121,8 @@ extension RepoResultsViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         doSearch()
     }
+
+  @IBAction func settingsPressed(sender: UIBarButtonItem) {
+    performSegueWithIdentifier("settingsSegue", sender: self)
+  }
 }
